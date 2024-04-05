@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Updating Packages"'
                 sh 'echo "build Dockerfile into image"'
-                sh 'docker build -t my-node-app .'
+                sh 'docker build -t my-new-nodejs-app .'
 
                 // Your build steps here
             }
@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'echo "Run the Docker image as a container"'
-                sh 'docker run -p 3000:3000 my-node-app'
+                sh 'docker run -p 3000:3000 my-new-nodejs-app'
                 sh 'npm start'
 
                 // Your deployment steps here
