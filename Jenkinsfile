@@ -30,15 +30,8 @@ pipeline {
     }
     post {
         always {
-            // Cleanup steps if needed
-        }
-        
-        success {
-            // Actions to be performed if the pipeline succeeds
-        }
-        
-        failure {
-            // Actions to be performed if the pipeline fails
+            // Clean up Docker containers after the pipeline execution
+            cleanWs()
         }
     }
 }
