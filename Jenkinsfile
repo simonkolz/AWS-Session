@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh 'echo "Run the Docker image as a container"'
                 sh 'docker run -p 3000:3000 my-node-app'
-                sh 'npm start run'
+                sh 'npm start'
 
                 // Your deployment steps here
             }
@@ -30,19 +30,15 @@ pipeline {
     }
     post {
         always {
-            // Actions to be performed regardless of the pipeline's outcome
+            // Cleanup steps if needed
         }
+        
         success {
             // Actions to be performed if the pipeline succeeds
         }
+        
         failure {
             // Actions to be performed if the pipeline fails
-        }
-        unstable {
-            // Actions to be performed if the pipeline result is unstable
-        }
-        changed {
-            // Actions to be performed if the pipeline result is changed
         }
     }
 }
