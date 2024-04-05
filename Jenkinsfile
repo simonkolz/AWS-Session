@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Updating Packages"'
-                sh 'sudo apt update'
+                sh 'apt update'
                 sh 'echo "build Dockerfile into image"'
                 sh 'docker build -t my-node-app .'
 
