@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo "Run the Docker image as a container"
+                sh 'echo "Run the Docker image as a container"'
                 sh 'docker run -p 3000:3000 my-node-app'
                 sh 'npm start run'
 
